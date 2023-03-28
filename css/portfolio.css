@@ -1,13 +1,10 @@
-.main {
-    background: #999;
-    background-image: url(../images/bg.png);
+#intro {
+    position: relative;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../img/bg01.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    position: relative;
-    width: 100%;
-    height: 100%;
 }
 
 .inner {
@@ -27,7 +24,43 @@
 }
 
 .mainBox {
-    background: rgba(0, 0, 0, 0.5);
+    width: 1600px;
+    height: 500px;
+    margin: 0 auto;
+    background: rgba(61, 86, 86, 0.5);
+    color: #fff;
+    text-align: center;
+}
+
+.bg_line {
+    position: absolute;
+    top: calc(50% - 200px);
+    left: 50%;
+    transform: translate(0, -50%);
+}
+
+.bg_line::before {
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-top: 10px solid green;
+    border-left: 10px solid green;
+    margin: 0 0 0 -800px;
+
+}
+
+.bg_line::after {
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-top: 10px solid green;
+    border-right: 10px solid green;
+}
+
+.section {
+    background: #FED049;
 }
 
 .section .content {

@@ -11,33 +11,31 @@ body {
 }
 
 /* ----- 메인 Intro 페이지 ----- */
-#intro {}
-
 .mainBox {
+    position: relative;
     width: 1200px;
-    height: auto;
     margin: 0 auto;
 }
 
 .title_container h2 {
     font-family: 'DM Serif Display', serif;
     color: #0B4619;
-    font-size: 150px;
+    font-size: 170px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.mainBox .title_container span {
+.title_container span {
     color: #333;
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 700;
-    line-height: 70px;
+    line-height: 80px;
     letter-spacing: 5px;
-    display: block;
+    /* display: block; */
     font-family: 'Cafe24Danjunghae';
 }
 
-.mainBox .title_container strong {
+.title_container strong {
     color: #ffd400;
     text-shadow: 1px 1px 2px #555;
 }
@@ -49,6 +47,21 @@ body {
     width: 200px;
     height: 2px;
     margin: 0 10px 15px 20px;
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    animation: rotate01 40s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes rotate01 {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* ----- 페이지 ----- */
@@ -136,49 +149,38 @@ body {
 .gnb li a {
     position: relative;
     display: block;
-    height: 20px;
+    height: 30px;
     margin: 5px 0;
 }
 
 .gnb li a::before {
     content: "";
     position: absolute;
-    inset: 50% 0 auto auto;
-    width: 30px;
-    height: 10px;
-    background: #333;
-    transition: 0.5s;
-}
-
-.gnb li.on a::before {
-    width: 70px;
-}
-
-nav li a {
-    display: block;
-    text-indent: -999px;
-    width: 4rem;
-    line-height: 1rem;
-}
-
-nav li:after {
-    content: "";
-    display: block;
-    width: 1rem;
-    height: 0.5rem;
-    background: #1d4e76;
-    position: absolute;
     top: 50%;
-    left: 0;
-    transform: translateY(-50%) skew(20deg);
-    transition: 1s;
-    z-index: -1;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #568A35;
+    transition: 0.5s;
+    /* transform: translateY(-50%) skew(20deg);
+    width: 40px;
+    height: 10px; */
 }
 
-nav li.on:after {
-    width: 100%;
-    background: #f4c367;
+/* on */
+.gnb li.on a::before {
+    /* width: 70px;
+    background: #0B4619; */
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    background-image: url(../img/dandelion04\(20px\).png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 
 /*  */
 .cover {

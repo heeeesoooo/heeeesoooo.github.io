@@ -10,122 +10,6 @@ body {
     background-attachment: fixed;
 }
 
-/* ----- 메인 Intro 페이지 ----- */
-.mainBox {
-    position: relative;
-    width: 1200px;
-    margin: 0 auto;
-}
-
-.title_container h2 {
-    font-family: 'DM Serif Display', serif;
-    color: #0B4619;
-    font-size: 170px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.title_container span {
-    color: #333;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 80px;
-    letter-spacing: 5px;
-    /* display: block; */
-    font-family: 'Cafe24Danjunghae';
-}
-
-.title_container strong {
-    color: #ffd400;
-    text-shadow: 1px 1px 2px #555;
-}
-
-.title_container .my_name::before {
-    content: "";
-    display: inline-block;
-    background: #333;
-    width: 200px;
-    height: 2px;
-    margin: 0 10px 15px 20px;
-}
-
-.circle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    animation: rotate01 40s linear infinite;
-    transform-origin: 50% 50%;
-}
-
-@keyframes rotate01 {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* ----- 페이지 ----- */
-
-.inner {
-    display: flex;
-    gap: 100px;
-    width: 1600px;
-    margin: 0 auto;
-    min-height: 400px;
-}
-
-.inner>* {
-    flex: 1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.section img {
-    max-width: 100%;
-}
-
-.section {}
-
-.section .content {
-    background: tomato;
-    opacity: 0;
-    transform: translate(-300px, 0);
-    height: 400px;
-    overflow: hidden;
-    align-items: flex-start;
-}
-
-.section .content .case {
-    transform: translate(0, 0);
-    transition: 2s;
-}
-
-.section .content:hover .case {
-    transform: translate(0, calc(-100% + 400px));
-}
-
-
-.section .description {
-    background: tan;
-    opacity: 0;
-    transform: translate(300px, 0);
-}
-
-.section.on .content {
-    transform: translate(0, 0);
-    opacity: 1;
-    transition: 1s 1s;
-}
-
-.section.on .description {
-    transform: translate(0, 0);
-    opacity: 1;
-    transition: 1s 2s;
-}
-
 /* 헤더 */
 .header {
     position: fixed;
@@ -182,7 +66,7 @@ body {
 }
 
 
-/*  */
+/* ----- 메뉴 ----- */
 .cover {
     position: fixed;
     inset: 0 0 auto 0;
@@ -280,3 +164,106 @@ body {
 }
 
 /*  */
+
+/* ----- 메인 Intro 페이지 ----- */
+#intro .mainBox {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#intro .title_container h2 {
+    font-family: 'DM Serif Display', serif;
+    color: #0B4619;
+    font-size: 170px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#intro .title_container span {
+    color: #333;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: 5px;
+    /* display: block; */
+    font-family: 'Cafe24Danjunghae';
+}
+
+#intro .title_container strong {
+    color: #ffd400;
+    text-shadow: 1px 1px 2px #555;
+}
+
+#intro .title_container .my_name::before {
+    content: "";
+    display: inline-block;
+    background: #333;
+    width: 200px;
+    height: 2px;
+    margin: 0 10px 15px 20px;
+}
+
+#intro .circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    animation: rotate01 40s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes rotate01 {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*  */
+
+
+* {
+    outline: 1px solid tomato;
+}
+
+/* ----- 페이지 ----- */
+.bg_cover {
+    display: flex;
+}
+
+.left_wrap {
+    width: 60%;
+    height: 100vh;
+    /* background: rgba(255, 255, 255, 0.95); */
+}
+
+.right_wrap {
+    width: 40%;
+    z-index: 999;
+    background: tomato;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*  */
+.dis {
+    position: relative;
+    display: flex;
+}
+
+.desktop {
+    background: url(../img/desktop01.png) no-repeat center contain;
+    width: 400px;
+    height: 300px;
+    z-index: 999;
+}
+
+.desktop_cover {
+    width: 300px;
+    height: 200px;
+}

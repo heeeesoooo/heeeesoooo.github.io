@@ -1,7 +1,3 @@
-* {
-    outline: 1px -solid tomato;
-}
-
 body {
     background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../img/bg01.jpg);
     background-size: cover;
@@ -219,13 +215,6 @@ body {
     }
 }
 
-/*  */
-
-
-* {
-    outline: 1px solid tomato;
-}
-
 /* ----- 페이지 ----- */
 .bg_cover {
     display: flex;
@@ -235,35 +224,143 @@ body {
     width: 60%;
     height: 100vh;
     /* background: rgba(255, 255, 255, 0.95); */
+    opacity: 0;
+    transform: translate(-300px, 0);
+    overflow: hidden;
+    align-items: flex-start;
+}
+
+.section.on .left_wrap {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 1s 1s;
 }
 
 .right_wrap {
     width: 40%;
-    z-index: 999;
-    background: tomato;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transform: translate(300px, 0);
+    overflow: hidden;
+    align-items: flex-start;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 20% 100%);
 }
 
-.inner {
+.section.on .right_wrap {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 1s 1.5s;
+}
+
+.flex_wrap {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-/*  */
-.dis {
+/* ------left_wrap------ */
+.dis_wrap {
     position: relative;
-    display: flex;
 }
 
+/* --PC-- */
 .desktop {
-    background: url(../img/desktop01.png) no-repeat center contain;
-    width: 400px;
-    height: 300px;
-    z-index: 999;
+    background: url(../img/desktop01.png) no-repeat center center/cover;
+    width: 900px;
+    height: 500px;
+    padding: 16px 90px 0px 93px;
 }
 
-.desktop_cover {
+.desktop .desktop_cover {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.desktop_cover img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    transition: 5s;
+    transform: translate(0, 0);
+}
+
+.desktop_cover:hover img {
+    transform: translate(0, calc(-100% + 420px));
+}
+
+/* --모바일-- */
+.mobile {
+    background: url(../img/mobile01.png) no-repeat center center/cover;
+    width: 200px;
+    height: 400px;
+    padding: 13px 14px;
+    z-index: 999;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+}
+
+.mobile .mo_cover {
+    position: relative;
+    width: 100%;
+    height: 374px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.mo_cover img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    transition: 5s;
+    transform: translate(0, 0);
+    z-index: -1;
+}
+
+.mo_cover:hover img {
+    transform: translate(0, calc(-100% + 420px));
+}
+
+
+/* ------right_wrap------ */
+.content_wrap {}
+
+.content_wrap .title {
+    margin-bottom: 50px;
+}
+
+.content_wrap .title h2 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: 'Cafe24Danjunghae';
+}
+
+.content_wrap .contents ul li span:nth-child(1) {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Cafe24Danjunghae';
+    width: 200px;
+}
+
+.content_wrap .contents ul li span:nth-child(1) {
+    font-size: 20px;
+    font-weight: 500;
     width: 300px;
-    height: 200px;
+}
+
+
+
+
+* {
+    outline: 1px -solid tomato;
 }

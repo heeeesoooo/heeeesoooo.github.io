@@ -221,13 +221,14 @@ body {
 }
 
 .left_wrap {
-    width: 60%;
+    width: 40%;
     height: 100vh;
-    /* background: rgba(255, 255, 255, 0.95); */
     opacity: 0;
     transform: translate(-300px, 0);
     overflow: hidden;
     align-items: flex-start;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .section.on .left_wrap {
@@ -237,14 +238,12 @@ body {
 }
 
 .right_wrap {
-    width: 40%;
+    width: 60%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.9);
     opacity: 0;
     transform: translate(300px, 0);
     overflow: hidden;
     align-items: flex-start;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 20% 100%);
 }
 
 .section.on .right_wrap {
@@ -260,6 +259,36 @@ body {
 }
 
 /* ------left_wrap------ */
+.content_wrap {}
+
+.content_wrap .title {
+    margin-bottom: 50px;
+}
+
+.content_wrap .title h2 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: 'Cafe24Danjunghae';
+}
+
+.content_wrap .contents ul li {
+    display: flex;
+    flex-direction: column;
+}
+
+.content_wrap .contents ul li span:nth-child(1) {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Cafe24Danjunghae';
+    margin-bottom: 10px;
+}
+
+.content_wrap .contents ul li span:nth-child(2) {
+    margin-bottom: 20px;
+}
+
+/* ------right_wrap------ */
 .dis_wrap {
     position: relative;
 }
@@ -304,7 +333,7 @@ body {
     overflow: hidden;
     position: absolute;
     bottom: 0;
-    right: -50px;
+    left: -50px;
 }
 
 .mobile .mo_cover {
@@ -331,36 +360,7 @@ body {
 }
 
 
-/* ------right_wrap------ */
-.content_wrap {}
-
-.content_wrap .title {
-    margin-bottom: 50px;
-}
-
-.content_wrap .title h2 {
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 20px;
-    font-family: 'Cafe24Danjunghae';
-}
-
-.content_wrap .contents ul li span:nth-child(1) {
-    font-size: 20px;
-    font-weight: 600;
-    font-family: 'Cafe24Danjunghae';
-    width: 200px;
-}
-
-.content_wrap .contents ul li span:nth-child(1) {
-    font-size: 20px;
-    font-weight: 500;
-    width: 300px;
-}
-
-
-
 
 * {
-    outline: 1px -solid tomato;
+    outline: 1px solid tomato;
 }

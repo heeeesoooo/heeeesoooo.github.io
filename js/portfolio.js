@@ -5,6 +5,7 @@ $(function () {
     var fullpageOption = {
         anchors: [
             'main',
+            'profile',
             'portfolio01',
             'portfolio02',
             'portfolio03',

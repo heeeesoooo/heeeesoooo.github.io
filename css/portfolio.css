@@ -1,21 +1,178 @@
-body {
-    background: #FEFCF3;
+:root {
+    /* color */
+    --mc: #333;
+    --ac: #FEFCF3;
+    --bc: #C5CEB9;
+    --ec: #6E8258;
+    --dc: #FFC437;
 }
 
-/* 헤더 */
+body {
+    background: var(--ac);
+    color: var(--mc);
+}
+
+/* --------HEADER-------- */
+/* --------LOGO-------- */
 .header {
     position: fixed;
     inset: 50px auto auto 50px;
-    z-index: 999;
+    z-index: 998;
 }
 
-.header.on {}
 
+/* --------MENU-------- */
+/* MENU BUTTON */
+.mopen {
+    position: fixed;
+    inset: 50px 50px auto auto;
+    z-index: 999;
+
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.mopen span {
+    position: absolute;
+    left: 0;
+    background: var(--ec);
+    width: 100%;
+    height: 4px;
+    border-radius: 0.1rem;
+    transition: 0.5s;
+}
+
+.mopen span:nth-child(1) {
+    top: 0;
+}
+
+.mopen span:nth-child(2) {
+    top: 50%;
+}
+
+.mopen span:nth-child(3) {
+    top: 50%;
+}
+
+.mopen span:nth-child(4) {
+    top: 100%;
+}
+
+.mopen.on span:nth-child(1) {
+    opacity: 0;
+}
+
+.mopen.on span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.mopen.on span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.mopen.on span:nth-child(4) {
+    opacity: 0;
+}
+
+/* MENU COVER */
+.cover {
+    position: fixed;
+    inset: 0 0 auto 0;
+    background: var(--ac);
+    z-index: 999;
+
+    height: 0;
+    overflow: hidden;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover.on {
+    height: 100vh;
+}
+
+.cover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    background: var(--dc);
+    width: 100%;
+    height: 5px;
+}
+
+.cover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background: var(--dc);
+    width: 100%;
+    height: 5px;
+}
+
+.cover ul {
+    text-align: center;
+}
+
+.cover ul li {}
+
+.cover ul li a {
+    position: relative;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 1.5;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+
+.cover ul li a.font_fill {
+    font-size: 50px;
+    -webkit-text-stroke: 1.5px;
+    -webkit-text-fill-color: transparent;
+}
+
+.cover ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 0;
+    height: 50px;
+    transition: all 0.2s ease-in-out;
+    /* transition-duration: 0.3s; */
+    opacity: 0;
+    background-image: url(../img/cover_line.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0;
+}
+
+.cover ul li a:hover::after {
+    width: 100%;
+    height: 50px;
+    opacity: 1;
+}
+
+
+.toTop {
+    position: fixed;
+    inset: auto 50px 50px auto;
+    z-index: 998;
+}
+
+
+/* --------FULLPAGE MENU-------- */
 .gnb {
     position: fixed;
     inset: 50% 50px auto auto;
     transform: translate(0, -50%);
-    z-index: 999;
+    z-index: 998;
 }
 
 .gnb li {
@@ -37,7 +194,7 @@ body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #6E8258;
+    background: var(--ec);
     transition: 0.5s;
 }
 
@@ -53,102 +210,6 @@ body {
 }
 
 
-/* ----- 메뉴 ----- */
-.cover {
-    position: fixed;
-    inset: 0 0 auto 0;
-    background: #333;
-    color: #ddd;
-    z-index: 998;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-    /* display: none; */
-    height: 0;
-    overflow: hidden;
-    transition: 1s;
-}
-
-
-.cover.on {
-    height: 100vh;
-}
-
-
-.toTop {
-    position: fixed;
-    inset: auto 50px 50px auto;
-    z-index: 999;
-}
-
-.mopen {
-    position: fixed;
-    inset: 50px 50px auto auto;
-    z-index: 999;
-
-    width: 30px;
-    height: 30px;
-    background: #f7f7f7;
-}
-
-.mopen::before,
-.mopen::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    background: #333;
-}
-
-.mopen::before {
-    inset: 5px 5px auto 5px;
-}
-
-.mopen::after {
-    inset: auto 5px 5px 5px;
-}
-
-.mopen.on::before {
-    opacity: 0;
-}
-
-.mopen.on::after {
-    opacity: 0;
-}
-
-.mopen button::before,
-.mopen button::after {
-    content: "";
-    position: absolute;
-    inset: 50% 5px auto 5px;
-    height: 2px;
-    background: #333;
-}
-
-.mopen button::before {
-    transform: translate(0, -50%);
-}
-
-.mopen button::after {
-    transform: translate(0, -50%);
-}
-
-.mopen.on button::before {
-    transform: translate(0, -50%) rotate(45deg);
-}
-
-.mopen.on button::after {
-    transform: translate(0, -50%) rotate(-45deg);
-}
-
-.mopen button {
-    font-size: 0;
-    background: transparent;
-    border: none;
-    outline: none;
-}
 
 /*  */
 
@@ -161,7 +222,7 @@ body {
 
 #intro .title_container h2 {
     font-family: 'DM Serif Display', serif;
-    color: #6E8258;
+    color: var(--ec);
     font-size: 170px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -173,12 +234,11 @@ body {
     font-weight: 700;
     line-height: 80px;
     letter-spacing: 5px;
-    /* display: block; */
     font-family: 'Cafe24Danjunghae';
 }
 
 #intro .title_container strong {
-    color: rgb(255, 187, 0);
+    color: var(--dc);
 }
 
 #intro .title_container .my_name::before {
@@ -198,12 +258,11 @@ body {
     z-index: -2;
 }
 
-#intro .circle_bg img {
+/* #intro .circle_bg img {
     border-radius: 50%;
     width: 280px;
     background-color: rgba(255, 255, 255, 0.7);
-
-}
+} */
 
 #intro .circle {
     position: absolute;
@@ -220,7 +279,26 @@ body {
     }
 }
 
-/* ----- 페이지 ----- */
+/* --------------- ABOUT ME --------------- */
+
+
+.about_inner {
+    background: url(../img/cover_bg.png) no-repeat center center;
+    background-size: contain;
+    width: 1600px;
+    height: 600px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    outline: 1px solid tomato;
+}
+
+/* --------------- 페이지 --------------- */
 .bg_cover {
     display: flex;
     position: relative;
@@ -249,7 +327,7 @@ body {
     overflow: hidden;
     align-items: flex-start;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
-    background: #C5CEB9;
+    background: var(--bc);
 }
 
 .section.on .right_wrap {
@@ -404,12 +482,12 @@ body {
     height: 50px;
     border-radius: 80px;
     z-index: 999;
-    border: 2px solid #6E8258;
+    border: 2px solid var(--ec);
 }
 
 .link:hover {
     color: #fff;
-    background: #6E8258;
+    background: var(--ec);
 }
 
 .link a {
@@ -432,9 +510,4 @@ body {
 .link:hover a>i {
     margin-left: 15px;
     transition: 0.5s;
-}
-
-
-* {
-    outline: 1px --solid tomato;
 }

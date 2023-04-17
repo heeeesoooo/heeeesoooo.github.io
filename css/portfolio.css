@@ -279,24 +279,6 @@ body {
     }
 }
 
-/* --------------- ABOUT ME --------------- */
-
-
-.about_inner {
-    background: url(../img/cover_bg.png) no-repeat center center;
-    background-size: contain;
-    width: 1600px;
-    height: 600px;
-    margin: 0 auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-* {
-    outline: 1px solid tomato;
-}
 
 /* --------------- 페이지 --------------- */
 .bg_cover {
@@ -510,4 +492,100 @@ body {
 .link:hover a>i {
     margin-left: 15px;
     transition: 0.5s;
+}
+
+
+/* --------------- ABOUT ME --------------- */
+#about {
+    /* background-image: url(../img/profile_bg01.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+    background: url(../img/cover_bg01.png) no-repeat center center;
+    background-size: cover;
+}
+
+.mid_wrap {}
+
+.about_inner {
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 0 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background: var(--bc); */
+}
+
+.about_inner h2 {
+    font-family: 'Cafe24Danjunghae';
+    text-align: center;
+    font-size: 60px;
+
+    margin-bottom: 30px;
+}
+
+.info_all {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.info_all .left_info img {
+    border-radius: 50%;
+}
+
+.info_all .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hashtag {
+    font-family: 'MYYeongnamnu';
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.hashtag span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.info_all .info ul li {
+    display: flex;
+    line-height: 30px;
+}
+
+.info_all .info ul li p:nth-child(1) {
+    font-size: 20px;
+    font-weight: 700;
+    width: 180px;
+}
+
+.info_all .info ul li p:nth-child(2) {}
+
+.info_all .info .info_ul {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.info_all .info .info_ul::after {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+    height: 1px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.info_all .info .info_ul li p:nth-child(1) {
+    width: 20%;
+}
+
+
+* {
+    outline: 1px --solid tomato;
 }

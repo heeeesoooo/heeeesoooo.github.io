@@ -5,12 +5,13 @@ $(function () {
     var fullpageOption = {
         anchors: [
             'main',
-            'profile',
             'portfolio01',
             'portfolio02',
             'portfolio03',
             'portfolio04',
-            'portfolio05'
+            'portfolio05',
+            'profile',
+            'portfolio06'
         ],
 
 

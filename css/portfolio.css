@@ -39,7 +39,7 @@ body {
     background: var(--ec);
     width: 100%;
     height: 4px;
-    border-radius: 0.1rem;
+    border-radius: 4px;
     transition: 0.5s;
 }
 
@@ -160,13 +160,6 @@ body {
 }
 
 
-.toTop {
-    position: fixed;
-    inset: auto 50px 50px auto;
-    z-index: 998;
-}
-
-
 /* --------FULLPAGE MENU-------- */
 .gnb {
     position: fixed;
@@ -210,8 +203,20 @@ body {
 }
 
 
+/* --------UP SCROLL-------- */
 
-/*  */
+.toTop {
+    position: fixed;
+    inset: auto 50px 50px auto;
+    transform: translate(0, 0);
+    z-index: 998;
+    width: 52px;
+    transition: 0.5s;
+}
+
+.toTop:hover {
+    transform: translate(0, -30px);
+}
 
 /* ----- 메인 Intro 페이지 ----- */
 #intro .mainBox {
@@ -269,11 +274,11 @@ body {
     top: 0;
     right: 0;
     z-index: -1;
-    animation: rotate01 40s linear infinite;
+    animation: rotate02 40s linear infinite;
     transform-origin: 50% 50%;
 }
 
-@keyframes rotate01 {
+@keyframes rotate02 {
     100% {
         transform: rotate(360deg);
     }
@@ -292,7 +297,6 @@ body {
     opacity: 0;
     transform: translate(-300px, 0);
     overflow: hidden;
-    align-items: flex-start;
 }
 
 .section.on .left_wrap {
@@ -326,9 +330,8 @@ body {
 
 
 /* ------left_wrap------ */
-.dis_wrap {
+.inner {
     position: relative;
-    margin: 0 0 0 100px;
 }
 
 /* --PC-- */
@@ -409,6 +412,47 @@ body {
 }
 
 
+.link {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 150px;
+    height: 150px;
+    border-radius: 80px;
+    z-index: 999;
+    border: 2px solid var(--ec);
+}
+
+.link:hover {
+    color: #fff;
+    background: var(--ec);
+}
+
+.link a {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 50px;
+    font-family: 'Cafe24Danjunghae';
+    letter-spacing: 2px;
+
+    display: flex;
+    justify-content: center;
+    width: 150px;
+}
+
+.link a>i {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.link:hover a>i {
+    margin-left: 15px;
+    transition: 0.5s;
+}
+
+
+
+
 /* ------right_wrap------ */
 .content_wrap {
     position: relative;
@@ -459,42 +503,6 @@ body {
 }
 
 
-.link {
-    width: 150px;
-    height: 50px;
-    border-radius: 80px;
-    z-index: 999;
-    border: 2px solid var(--ec);
-}
-
-.link:hover {
-    color: #fff;
-    background: var(--ec);
-}
-
-.link a {
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 50px;
-    font-family: 'Cafe24Danjunghae';
-    letter-spacing: 2px;
-
-    display: flex;
-    justify-content: center;
-    width: 150px;
-}
-
-.link a>i {
-    font-size: 25px;
-    margin-top: 10px;
-}
-
-.link:hover a>i {
-    margin-left: 15px;
-    transition: 0.5s;
-}
-
-
 /* --------------- ABOUT ME --------------- */
 #about {
     /* background-image: url(../img/profile_bg01.png);
@@ -529,7 +537,6 @@ body {
 
 .info_all {
     display: flex;
-    gap: 30px;
     justify-content: space-between;
 }
 
@@ -559,10 +566,15 @@ body {
     line-height: 30px;
 }
 
+
+.info_all .info .info_ul li p:nth-child(1) {
+    width: 15%;
+}
+
 .info_all .info ul li p:nth-child(1) {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
-    width: 180px;
+    width: 160px;
 }
 
 .info_all .info ul li p:nth-child(2) {}
@@ -579,10 +591,6 @@ body {
     height: 1px;
     width: 100%;
     margin-top: 20px;
-}
-
-.info_all .info .info_ul li p:nth-child(1) {
-    width: 20%;
 }
 
 

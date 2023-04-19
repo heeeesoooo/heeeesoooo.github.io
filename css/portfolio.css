@@ -148,7 +148,7 @@ body {
     background-image: url(../img/cover_line.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 50px;
     z-index: -1;
     opacity: 0;
 }
@@ -296,7 +296,7 @@ body {
     height: 100vh;
     opacity: 0;
     transform: translate(-300px, 0);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .section.on .left_wrap {
@@ -310,8 +310,6 @@ body {
     height: 100vh;
     opacity: 0;
     transform: translate(300px, 0);
-    overflow: hidden;
-    align-items: flex-start;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
     background: var(--bc);
 }
@@ -328,9 +326,49 @@ body {
     justify-content: center;
 }
 
+* {
+    outline: 1px --solid rgba(255, 0, 0, 0.3);
+}
+
+.link {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    z-index: 999;
+
+    width: 180px;
+    height: 60px;
+    background-image: url(../img/website.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 60px;
+}
+
+.link a {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 70px;
+    font-family: 'Cafe24Danjunghae';
+    letter-spacing: 2px;
+
+    display: flex;
+    justify-content: center;
+    padding: 0 15px 0 0;
+}
+
+.link a>i {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.link:hover a>i {
+    transition: 0.5s;
+    transform: translateX(10px);
+}
 
 /* ------left_wrap------ */
-.inner {
+.left_wrap .inner {
     position: relative;
 }
 
@@ -412,48 +450,17 @@ body {
 }
 
 
-.link {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 150px;
-    height: 150px;
-    border-radius: 80px;
-    z-index: 999;
-    border: 2px solid var(--ec);
-}
-
-.link:hover {
-    color: #fff;
-    background: var(--ec);
-}
-
-.link a {
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 50px;
-    font-family: 'Cafe24Danjunghae';
-    letter-spacing: 2px;
-
-    display: flex;
-    justify-content: center;
-    width: 150px;
-}
-
-.link a>i {
-    font-size: 25px;
-    margin-top: 10px;
-}
-
-.link:hover a>i {
-    margin-left: 15px;
-    transition: 0.5s;
-}
-
-
 
 
 /* ------right_wrap------ */
+
+.right_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0 0 0 200px;
+}
+
 .content_wrap {
     position: relative;
 }

@@ -326,10 +326,6 @@ body {
     justify-content: center;
 }
 
-* {
-    outline: 1px --solid rgba(255, 0, 0, 0.3);
-}
-
 .link {
     position: absolute;
     top: 20px;
@@ -549,6 +545,11 @@ body {
 
 .info_all .left_info img {
     border-radius: 50%;
+    width: 360px;
+}
+
+.info_all .left_info {
+    width: 50%;
 }
 
 .info_all .info {

@@ -538,9 +538,16 @@ body {
     margin-bottom: 30px;
 }
 
+
 .info_all {
     display: flex;
     justify-content: space-between;
+}
+
+.info_all .left_info {
+    width: 50%;
+    display: flex;
+    justify-content: center;
 }
 
 .info_all .left_info img {
@@ -548,9 +555,6 @@ body {
     width: 360px;
 }
 
-.info_all .left_info {
-    width: 50%;
-}
 
 .info_all .info {
     display: flex;
@@ -601,7 +605,3 @@ body {
     margin-top: 20px;
 }
 
-
-* {
-    outline: 1px --solid tomato;
-}
